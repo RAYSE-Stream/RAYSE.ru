@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAYSE — ссылки</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* АНИМИРОВАННЫЙ НЕОНОВЫЙ ФОН (#6fc9e3) */
+        .neon-bg {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, #6fc9e333, transparent 60%),
+                        radial-gradient(circle at 80% 80%, #6fc9e322, transparent 70%),
+                        radial-gradient(circle at 50% 50%, #6fc9e311, transparent 80%);
+            animation: moveGlow 12s infinite alternate ease-in-out;
+            z-index: -1;
+        }
+
+        @keyframes moveGlow {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-20px, 20px) scale(1.1); }
+            100% { transform: translate(20px, -20px) scale(1); }
+        }
+
+        /* КНОПКА В ЭФИРЕ */
+        .live {
+            background: #ff0033;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 25px;
+            box-shadow: 0 0 12px #ff0033aa;
+            animation: livePulse 1.6s infinite ease-in-out;
+        }
+
+        @keyframes livePulse {
+            0%, 100% { box-shadow: 0 0 12px #ff0033aa; }
+            50% { box-shadow: 0 0 22px #ff0033ff; }
+        }
+
+        /* НЕОНОВЫЙ ТЕКСТ RAYSE (#6fc9e3) */
+        h1 {
+            font-size: 56px;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #6fc9e3, #b4f1ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glowText 3s ease-in-out infinite;
+        }
+
+        @keyframes glowText {
+            0%, 100% { filter: drop-shadow(0 0 6px #6fc9e3); }
+            50% { filter: drop-shadow(0 0 14px #b4f1ff); }
+        }
+
+        p {
+            opacity: 0.8;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        /* КНОПКИ */
+        .links {
+            width: 100%;
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .link {
+            text-decoration: none;
+            padding: 16px 20px;
+            background: #0a0a0a;
+            border: 2px solid #1a1a1a;
+            border-radius: 14px;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            transition: 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 14px;
+            padding: 2px;
+            background: linear-gradient(90deg, #6fc9e3, #b4f1ff, #6fc9e3);
+            filter: blur(8px);
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .link:hover::before {
+            opacity: 1;
+        }
+
+        .link:hover {
+            transform: translateY(-4px);
+            border-color: #6fc9e3;
+            box-shadow: 0 0 12px #6fc9e388, 0 0 24px #b4f1ff66;
+        }
+
+        /* МОБИЛЬНАЯ ВЕРСИЯ */
+        @media (max-width: 480px) {
+            h1 { font-size: 42px; }
+            .link { font-size: 17px; padding: 14px; }
+            .live { font-size: 16px; padding: 8px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="neon-bg"></div>
+
+    <div class="live">🔴 В ЭФИРЕ</div>
+
+    <h1>RAYSE</h1>
+    <p>Игровой стример • Контент • Прямые эфиры</p>
+
+    <div class="links">
+        <a class="link" href="https://live.vkvideo.ru/rays" target="_blank">🎥 VK Live</a>
+        <a class="link" href="https://www.youtube.com/@RAYSESERG" target="_blank">▶️ YouTube</a>
+        <a class="link" href="https://www.twitch.tv/ra_yse" target="_blank">🟣 Twitch</a>
+
+        <a class="link" href="https://t.me/raysegroup" target="_blank">📨 Telegram</a>
+        <a class="link" href="https://vk.com/raysevideos" target="_blank">📱 VK Страница</a>
+
+        <a class="link" href="https://pay.cloudtips.ru/p/9318c266" target="_blank">💰 Донат — CloudTips</a>
+        <a class="link" href="https://www.donationalerts.com/r/ray_se" target="_blank">💸 DonationAlerts</a>
+        <a class="link" href="https://donatex.gg/donate/rayse" target="_blank">⚡ Donatex</a>
+    </div>
+
+</body>
+</html>
